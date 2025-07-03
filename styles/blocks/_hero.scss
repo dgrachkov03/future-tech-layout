@@ -89,14 +89,14 @@
 
     &-bg {
       background:
-        url("../../images/hero-resources-preview-bg.png") 0 0/cover no-repeat;
+        url("../images/hero-resources-preview-bg.png") 0 0/cover no-repeat;
       position: absolute;
       inset: 0;
       opacity: 0.325;
 
       @include tablet {
         background:
-          url("../../images/hero-resources-preview-bg-tablet.png") 0 0/cover no-repeat;
+          url("../images/hero-resources-preview-bg-tablet.png") 0 0/cover no-repeat;
         background-size: contain;
       }
     }

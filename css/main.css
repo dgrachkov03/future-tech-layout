@@ -336,7 +336,7 @@ svg * {
   translate: 0 -50%;
   content: "";
   right: 0;
-  background: url("../../images/icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
+  background: url("../images/icons/arrow-top-right_black.svg") center no-repeat var(--color-accent);
   border-radius: 50%;
 }
 @media (width <= 90.06125rem) {
@@ -520,13 +520,13 @@ button[aria-label]::before {
   }
 }
 .icon--yellow-arrow::after {
-  background-image: url("../../images/icons/arrow-top-right.svg");
+  background-image: url("../images/icons/arrow-top-right.svg");
 }
 .icon--yellow-eye::after {
-  background-image: url("../../images/icons/eye-yellow.svg");
+  background-image: url("../images/icons/eye-yellow.svg");
 }
 .icon--gray-arrow-down::after {
-  background-image: url("../../images/icons/arrow-down_gray.svg");
+  background-image: url("../images/icons/arrow-down_gray.svg");
 }
 
 .promo {
@@ -1117,14 +1117,14 @@ button[aria-label]::before {
   }
 }
 .hero__resources-preview-bg {
-  background: url("../../images/hero-resources-preview-bg.png") 0 0/cover no-repeat;
+  background: url("../images/hero-resources-preview-bg.png") 0 0/cover no-repeat;
   position: absolute;
   inset: 0;
   opacity: 0.325;
 }
 @media (width <= 63.99875rem) {
   .hero__resources-preview-bg {
-    background: url("../../images/hero-resources-preview-bg-tablet.png") 0 0/cover no-repeat;
+    background: url("../images/hero-resources-preview-bg-tablet.png") 0 0/cover no-repeat;
     background-size: contain;
   }
 }
@@ -2043,7 +2043,7 @@ button[aria-label]::before {
   --size: 1.375rem;
   width: var(--size);
   height: var(--size);
-  background: url("../../images/icons/star-gray.svg") center/contain no-repeat;
+  background: url("../images/icons/star-gray.svg") center/contain no-repeat;
 }
 @media (width <= 90.06125rem) {
   .rating-view__star {
@@ -2051,7 +2051,7 @@ button[aria-label]::before {
   }
 }
 .rating-view__star.is-active {
-  background-image: url("../../images/icons/star-yellow.svg");
+  background-image: url("../images/icons/star-yellow.svg");
 }
 
 .review-card {
@@ -3451,7 +3451,7 @@ button[aria-label]::before {
 .iti__arrow {
   width: 1.5rem;
   height: 1.5rem;
-  background-image: url("../../images/icons/arrow-down.svg");
+  background-image: url("../images/icons/arrow-down.svg");
   background-size: cover;
   border: 0;
 }

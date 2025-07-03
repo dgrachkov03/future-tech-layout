@@ -22,10 +22,10 @@
 
     @include square(var(--size));
 
-    background: url('../../images/icons/star-gray.svg') center/contain no-repeat;
+    background: url('../images/icons/star-gray.svg') center/contain no-repeat;
 
     &.is-active {
-      background-image: url('../../images/icons/star-yellow.svg');
+      background-image: url('../images/icons/star-yellow.svg');
     }
   }
 }
