@@ -1,0 +1,119 @@
+@use "../helpers" as *;
+
+.footer {
+  color: var(--color-dark-40);
+  border-top: var(--border);
+
+  &__body {
+    padding-block: fluid(80, 40);
+    border-bottom: var(--border);
+  }
+
+  &__menu {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    align-items: start;
+    gap: fluid(80, 20);
+
+    @include tablet {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &-column {
+      display: grid;
+      row-gap: fluid(36, 16);
+
+      &:last-child {
+        @include tablet {
+          grid-column: -1 / 1;
+
+          .footer__menu-list {
+            flex-direction: row;
+            flex-wrap: wrap;
+            gap: rem(12);
+          }
+        }
+      }
+    }
+
+    &-list {
+      display: flex;
+      flex-direction: column;
+      row-gap: fluid(18, 8);
+    }
+
+    &-item {
+      @include align-center;
+      column-gap: rem(8);
+    }
+
+    &-main-link {
+      font-weight: 500;
+    }
+
+    &-link {
+      &.button {
+        justify-content: start;
+        padding: rem(10) rem(16);
+        border-radius: rem(8);
+
+        @include laptop {
+          padding: rem(8) rem(14);
+          border-radius: rem(6);
+        }
+
+        & .icon::after {
+          @include square(rem(20));
+
+          @include laptop {
+            @include square(rem(18));
+          }
+        }
+      }
+    }
+  }
+
+  &__extra {
+    padding-block: rem(40);
+    @include align-center;
+    justify-content: space-between;
+    gap: rem(20);
+
+    @include laptop {
+      padding-block: rem(24);
+    }
+
+    @include mobile {
+      flex-direction: column;
+    }
+
+    &-menu {
+      &-list {
+        @include align-center;
+        flex-wrap: wrap;
+        row-gap: rem(12);
+
+        @include mobile {
+          justify-content: center;
+          row-gap: rem(8);
+        }
+      }
+
+      &-item:not(:last-child)::after {
+        content: "|";
+        margin-inline: rem(11);
+        color: var(--color-dark-15);
+
+        @include laptop {
+          margin-inline: rem(8);
+        }
+      }
+    }
+  }
+
+  &__soc1als {
+    @include mobile {
+      order: -1;
+    }
+  }
+}

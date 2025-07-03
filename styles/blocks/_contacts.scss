@@ -1,0 +1,38 @@
+@use "../helpers" as *;
+
+.contacts {
+  &__header {
+    border-bottom: var(--border);
+  }
+
+  &-card {
+    display: grid;
+    row-gap: fluid(50, 20);
+
+    &__body {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      row-gap: rem(15);
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+
+      @include mobile {
+        padding-left: rem(50);
+      }
+    }
+    
+    &__title {
+      font-family: var(--font-family-base);
+      font-weight: 500;
+    }
+  }
+
+  & .card__preview-link {
+    @include mobile-above {
+      justify-self: start;
+    }
+  }
+}

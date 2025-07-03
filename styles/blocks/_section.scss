@@ -1,0 +1,59 @@
+@use "../helpers" as *;
+
+.section {
+  &__header {
+    padding-block: fluid(120, 40);
+    background-color: var(--color-dark-10);
+
+    &-inner {
+      &:has(.section__link) {
+        display: grid;
+        align-items: center;
+        gap: rem(30) rem(250);
+
+        @include mobile-above {
+          grid-template-columns: 1fr auto;
+        }
+
+        @include laptop {
+          column-gap: rem(200);
+        }
+      }
+
+      &:has(.section__actions) {
+        display: grid;
+        align-items: center;
+        gap: rem(16);
+
+        @include tablet-above {
+          grid-template-columns: 1fr auto;
+        }
+
+        .section__actions {
+          @include tablet {
+            overflow-x: auto;
+          }
+        }
+      }
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      align-items: start;
+      row-gap: rem(16);
+
+      @include laptop {
+        row-gap: rem(10);
+      }
+    }
+  }
+
+  &__subtitle {
+    justify-self: start;
+  }
+
+  &__body {
+    border-block: var(--border);
+  }
+}

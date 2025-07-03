@@ -1,0 +1,171 @@
+@use "../helpers" as *;
+
+.blog-details {
+  &__banner {
+    display: flex;
+    align-items: end;
+    min-height: fluid(598, 281);
+    padding-block: fluid(65, 17);
+    text-align: center;
+    background:
+      linear-gradient(
+        180deg,
+        rgba(20, 20, 20, 0) 0%,
+        rgba(20, 20, 20, 0.88) 75.52%,
+        #141414 100%
+      ),
+      var(--bgImg) center/cover no-repeat;
+  }
+
+  &__title {
+    @include fluid-text(64, 28);
+    font-family: var(--font-family-base);
+    font-weight: 600;
+  }
+
+  &__intro {
+    &-title {
+      font-size: rem(20);
+      margin-bottom: rem(14) !important;
+
+      @include laptop {
+        margin-bottom: rem(6) !important;
+      }
+
+      @include mobile {
+        font-size: rem(18);
+      }
+    }
+  }
+
+  &__body {
+    border-block: var(--border);
+
+    &-inner {
+      display: grid;
+      grid-template-columns: 1fr rem(520);
+
+      @include tablet {
+        display: flex;
+        flex-direction: column-reverse;
+      }
+    }
+  }
+
+  &__content {
+    @include tablet-above {
+      border-right: var(--border);
+    }
+  }
+
+  &__intro,
+  &__main,
+  &__actions,
+  &__summary {
+    padding: fluid(80, 40) rem(80);
+
+    @include laptop {
+      padding-inline: rem(60);
+    }
+
+    @include tablet {
+      padding-inline: 0;
+    }
+  }
+
+  &__intro,
+  &__main {
+    padding-left: 0;
+  }
+
+  &__actions,
+  &__summary {
+    padding-right: 0;
+  }
+
+  &__intro,
+  &__actions,
+  &__summary {
+    @include tablet {
+      @include full-vw-centered-line(bottom);
+    }
+  }
+
+  &__intro,
+  &__actions {
+    @include tablet-above {
+      border-bottom: var(--border);
+    }
+  }
+
+  &__actions {
+    padding-block: fluid(50, 20);
+
+    .blog-actions {
+      &__list {
+        gap: rem(14);
+
+        @include tablet {
+          justify-content: center;
+        }
+      }
+
+      &__button {
+        background: none;
+        padding: rem(10) rem(24);
+        column-gap: rem(4);
+
+        @include laptop {
+          padding: rem(8) rem(14);
+        }
+      }
+
+      &__icon {
+        --size: #{rem(34)};
+
+        @include laptop {
+          --size: #{rem(26)};
+        }
+      }
+    }
+  }
+
+  &__body {
+    h2, h3, h4, h5, h6 {
+      font-family: var(--font-family-base);
+      font-weight: 500;
+
+      &:not(:first-child) {
+        margin-top: 1.5em;
+      }
+
+      &:not(:last-child) {
+        margin-bottom: 1em;
+      }
+    }
+  }
+
+  &__main {
+    --initialMaxHeight: #{rem(741)};
+
+    padding-bottom: fluid(54, 16);
+
+    @include laptop {
+      --initialMaxHeight: #{rem(692)};
+    }
+
+    @include mobile {
+      --initialMaxHeight: #{rem(669)};
+    }
+  }
+
+  &__news {
+    .news-card__controls {
+      @include mobile-above {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        column-gap: rem(50);
+      }
+    }
+  }
+}
