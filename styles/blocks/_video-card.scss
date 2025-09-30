@@ -1,0 +1,41 @@
+@use "../helpers" as *;
+
+.video-card {
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  row-gap: rem(30);
+  height: 100%;
+
+  @include laptop {
+    row-gap: rem(20);
+  }
+
+  &:has(.video-player__video--small) {
+    row-gap: fluid(30, 24);
+
+    & .video-card__body {
+      row-gap: fluid(14, 6);
+    }
+
+    & .video-card__title {
+      @include fluid-text(22, 16);
+    }
+
+    & .video-card__link {
+      @include small-mobile {
+        width: 100%;
+      }
+    }
+  }
+
+  &__body {
+    display: flex;
+    flex-direction: column;
+    row-gap: fluid(10, 4);
+  }
+
+  &__player {
+    width: 100%;
+  }
+}

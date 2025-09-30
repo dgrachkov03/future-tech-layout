@@ -1,0 +1,42 @@
+@use "../helpers" as *;
+
+.icon {
+  @include align-center(isInline);
+  column-gap: rem(10);
+
+  @include laptop {
+    column-gap: rem(4);
+  }
+
+  &::after {
+    @include square(rem(24));
+
+    @include laptop {
+      @include square(rem(20));
+    }
+
+    content: "";
+    flex-shrink: 0;
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+  }
+
+  &--yellow-arrow {
+    &::after {
+      background-image: url("../images/icons/arrow-top-right.svg");
+    }
+  }
+
+  &--yellow-eye {
+    &::after {
+      background-image: url("../images/icons/eye-yellow.svg");
+    }
+  }
+
+  &--gray-arrow-down {
+    &::after {
+      background-image: url("../images/icons/arrow-down_gray.svg");
+    }
+  }
+}

@@ -1,0 +1,95 @@
+@use "../helpers" as *;
+
+.about {
+  background-color: var(--color-dark-10);
+  padding-block: fluid(120, 40);
+
+  &__inner {
+    display: grid;
+    row-gap: fluid(100, 40);
+  }
+
+  &__header {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: rem(30) rem(80);
+    grid-template-areas: 
+      "icon info"
+      "icon description"
+    ;
+    align-items: center;
+
+    @include laptop {
+      gap: rem(20) rem(60);
+    }
+
+    @include mobile {
+      grid-template-areas: 
+        "icon subtitle"
+        "title title"
+        "description description"
+      ;
+      gap: rem(4) rem(20);
+    }
+  }
+
+  &__icon {
+    grid-area: icon;
+    width: fluid(150, 60);
+  }
+
+  &__info {
+    display: grid;
+    align-items: start;
+    row-gap: rem(16);
+
+    @include laptop {
+      row-gap: rem(10);
+    }
+
+    @include mobile {
+      display: contents;
+    }
+  }
+
+  &__subtitle {
+    justify-self: start;
+    
+    @include mobile {
+      grid-area: subtitle;
+    }
+  }
+
+  &__title {
+    @include mobile {
+      grid-area: title;
+      margin-top: rem(16);
+    }
+  }
+  
+  &__description {
+    color: var(--color-gray-50);
+    
+    @include mobile {
+      grid-area: description;
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: rem(20);
+    padding: rem(20);
+    border-radius: rem(12);
+    background-color: var(--color-dark);
+
+    @include laptop {
+      gap: rem(10);
+      padding: rem(10);
+      border-radius: rem(10);
+    }
+
+    @include tablet-above {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

@@ -1,0 +1,15 @@
+@use "../helpers" as *;
+
+.about-card {
+  display: grid;
+  row-gap: fluid(20, 10);
+  height: 100%;
+
+  &__title {
+    @include fluid-text(22, 16);
+    
+    @include align-center;
+    font-family: var(--font-family-base);
+    font-weight: 600;
+  }
+}

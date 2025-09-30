@@ -1,0 +1,60 @@
+@use "../helpers" as *;
+
+.iti {
+  width: 100%;
+
+  &__selected-country {
+    padding-inline: rem(20);
+    border-right: var(--border);
+
+    &-primary {
+      padding: 0
+    }
+
+    @include laptop {
+      padding-inline: rem(16);
+    }
+  }
+
+  &__arrow {
+    @include square(rem(24));
+
+    background-image: url("../images/icons/arrow-down.svg");
+    background-size: cover;
+    border: 0;
+
+    @include laptop {
+      @include square(rem(20));
+    }
+  }
+
+  &__tel-input {
+    padding-left: rem(102) !important;
+
+    @include laptop {
+      padding-left: rem(92) !important;
+    }
+  }
+
+  &__dropdown-content {
+    margin-top: rem(20) !important;
+    background-color: var(--color-dark-10);
+    border: var(--border) !important;
+    border-radius: rem(8);
+    box-shadow: var(--shadow);
+
+    @include laptop {
+      border-radius: rem(6);
+    }
+  }
+
+  &__search-input {
+    border-top-right-radius: rem(8);
+    border-bottom-right-radius: rem(8);
+    background-color: var(--color-dark-10);
+    padding: rem(16);
+    margin-bottom: rem(16);
+    border-bottom: var(--border);
+    color: inherit;
+  }
+}

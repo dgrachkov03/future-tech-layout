@@ -1,0 +1,32 @@
+@use "../helpers" as *;
+
+.feedback-form {
+  display: grid;
+  gap: fluid(50, 20) rem(50);
+
+  @include small-mobile-above {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include small-mobile {
+    padding-inline: rem(20);
+  }
+
+  &__cell {
+    &--wide {
+      grid-column: -1 / 1;
+    }
+  }
+
+  &__actions {
+    @include align-center;
+    justify-content: space-between;
+    column-gap: rem(70);
+    row-gap: rem(20);
+
+    @include small-mobile {
+      flex-direction: column;
+      align-items: stretch;
+    }
+  }
+}

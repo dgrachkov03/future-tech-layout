@@ -1,0 +1,151 @@
+@use "../helpers" as *;
+
+.hero {
+  &__main {
+    @include tablet-above {
+      display: grid;
+      grid-template-columns: 60% auto;
+      grid-template-areas: 
+        "body resources-preview"
+        "metrics resources-preview"
+      ;
+    }
+  }
+
+  &__body {
+    grid-area: body;
+    padding-top: rem(150);
+    padding-bottom: rem(100);
+    padding-right: rem(50);
+
+    @include laptop {
+      padding-top: rem(100);
+      padding-right: rem(40);
+    }
+
+    @include mobile {
+      padding-top: rem(40);
+      padding-bottom: rem(30);
+      padding-right: 0;
+    }
+  }
+
+  &__subtitle {
+    @include fluid-text(30, 18);
+
+    font-family: var(--font-family-accent);
+    font-weight: 500;
+    color: var(--color-dark-40);
+
+    &:not(:last-child) {
+      margin-bottom: fluid(30, 14);
+    }
+  }
+
+  &__title:not(:last-child) {
+    margin-bottom: fluid(20, 10);
+  }
+
+  &__description {
+    color: var(--color-gray-50);
+  }
+
+  &__metrics {
+    grid-area: metrics;
+    
+    @include tablet-above {
+      border-top: var(--border);
+    }
+
+    @include tablet {
+      &::before {
+        width: var(--100vw);
+        right: calc(var(--container-padding-x) * -1);
+      }
+    }
+  }
+
+  &__resources-preview {
+    grid-area: resources-preview;
+    position: relative;
+    padding-left: rem(80);
+    padding-bottom: rem(80);
+    
+    @include laptop {
+      padding-left: rem(50);
+      padding-bottom: rem(50);
+    }
+
+    @include tablet-above {
+      border-left: var(--border);
+    }
+
+    @include tablet {
+      width: var(--100vw);
+      margin-left: calc(var(--container-padding-x) * -1);
+      padding: rem(100) rem(40) rem(40);
+      border-top: var(--border);
+    }
+
+    &-bg {
+      background:
+        url("../images/hero-resources-preview-bg.png") 0 0/cover no-repeat;
+      position: absolute;
+      inset: 0;
+      opacity: 0.325;
+
+      @include tablet {
+        background:
+          url("../images/hero-resources-preview-bg-tablet.png") 0 0/cover no-repeat;
+        background-size: contain;
+      }
+    }
+
+    &-wrapper {
+      position: relative;
+      z-index: 2;
+    }
+  }
+
+  &__advantages {
+    border-block: var(--border);
+    
+    &-list {
+      @include tablet-above{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &-item {
+      --paddingX: #{rem(80)};
+
+      padding-block: fluid(50, 30);
+
+      @include laptop {
+        --paddingX: #{rem(50)};
+      }
+
+      @include tablet-above {
+        &:not(:first-child) {
+          padding-left: var(--paddingX);
+        }
+  
+        &:not(:last-child) {
+          padding-right: var(--paddingX);
+          border-right: var(--border);
+  
+          @include mobile {
+            border-right: none;
+          }
+        }
+      }
+
+      @include tablet {
+        &:not(:last-child) {
+          border-bottom: var(--border);
+        }
+      }
+    }
+  }
+}

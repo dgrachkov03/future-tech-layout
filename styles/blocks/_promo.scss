@@ -1,0 +1,30 @@
+@use "../helpers" as *;
+
+.promo {
+  text-align: center;
+  padding-block: rem(20);
+  border-bottom: var(--border);
+
+  @include laptop {
+    font-size: rem(14);
+    padding-block: rem(12);
+  }
+
+  @include mobile {
+    padding-top: rem(40);
+    padding-bottom: rem(15);
+    text-align: start;
+  }
+
+  &__link {
+    &--hidden {
+      @include mobile {
+        display: none;
+      }
+    }
+
+    &.icon {
+      column-gap: rem(10);
+    }
+  }
+}
