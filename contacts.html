@@ -7,8 +7,8 @@
     <link rel="icon" type="image/x-icon" href="./images/logo-icon.svg" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/css/intlTelInput.css">
     <link rel="stylesheet" href="./css/main.min.css" />
-    <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
-    <script src="./scripts/main.js" type="module"></script>
+    <script defer src="https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/intlTelInput.min.js"></script>
+    <script type="module" src="./scripts/main.js"></script>
   </head>
   <body>
     <div class="wrapper">
@@ -667,13 +667,18 @@
     </div>
 
     <script>
-      const phoneNumberInput = document.querySelector("#phoneNumber");
-
-      window.intlTelInput(phoneNumberInput, {
-        initialCountry: "in",
-        strictMode: true,
-        loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js")
-      });</script>
+      document.addEventListener('DOMContentLoaded', function() {
+        if (window.intlTelInput) {
+          const phoneNumberInput = document.querySelector("#phoneNumber");
+          window.intlTelInput(phoneNumberInput, {
+              initialCountry: "in",
+              strictMode: true,
+              loadUtils: () => import("https://cdn.jsdelivr.net/npm/intl-tel-input@25.3.1/build/js/utils.js")
+          });
+        } else {
+          console.error('intlTelInput not loaded');
+        }
+      });
     </script>
   </body>
 </html>
