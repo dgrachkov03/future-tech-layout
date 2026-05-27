@@ -1,0 +1,13 @@
+@use "../helpers" as *;
+
+.contacts {
+  &__header {
+    border-bottom: var(--border);
+  }
+
+  & .card__preview-link {
+    @include mobile-above {
+      justify-self: start;
+    }
+  }
+}

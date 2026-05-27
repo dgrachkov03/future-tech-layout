@@ -1,0 +1,73 @@
+@use "../helpers" as *;
+
+.blog-actions {
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: rem(10);
+    
+    @include laptop {
+      gap: rem(8);
+    }
+  }
+
+  &__button {
+    @include flex-align-center(isInline);
+
+    column-gap: rem(4);
+    color: var(--color-dark-60);
+    font-family: var(--font-family-accent);
+    border-radius: rem(100);
+    background-color: var(--color-dark-10);
+    border: var(--border);
+    padding: rem(8) rem(16);
+    
+    @include hover {
+      border-color: var(--color-accent);
+    }
+
+    @include laptop {
+      column-gap: rem(2);
+      padding: rem(6) rem(12);
+      font-size: rem(14);
+    }
+
+    &.is-active {
+      svg * {
+        fill: var(--color-red);
+        stroke: var(--color-red);
+      }
+    }
+
+    &--static {
+      cursor: default;
+      
+      @include hover {
+        border-color: var(--color-dark-15);
+      }
+    }
+  }
+
+  &__icon {
+    --size: #{rem(24)};
+
+    @include square(var(--size));
+
+    display: flex;
+    flex-shrink: 0;
+
+    @include laptop {
+      --size: #{rem(20)};
+    }
+
+    & svg {
+      width: 100%;
+      height: 100%;
+      color: var(--color-dark-40);
+
+      * {
+        fill: transparent;
+      }
+    }
+  }
+}

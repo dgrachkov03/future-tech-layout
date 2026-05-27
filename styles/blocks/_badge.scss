@@ -1,0 +1,21 @@
+@use "../helpers" as *;
+
+.badge {
+  display: inline-flex;
+  font-size: rem(16);
+  font-weight: 400;
+  color: var(--color-light);
+  padding: rem(4) rem(12);
+  background:
+    linear-gradient(var(--color-dark-10), var(--color-dark-10)) padding-box,
+    var(--gradient) border-box;
+  border: rem(1) solid transparent;
+  border-radius: rem(6);
+  pointer-events: none;
+
+  @include laptop {
+    font-size: rem(12);
+    padding: rem(2) rem(10);
+    border-radius: rem(4);
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "future-tech",
+  "version": "1.0.0",
+  "description": "Future Tech project layout",
+  "scripts": {
+    "build:css": "sass styles/main.scss styles/main.min.css --style=compressed --no-source-map",
+    "watch:css": "sass --watch styles/main.scss:styles/main.min.css --style=compressed --no-source-map"
+  },
+  "devDependencies": {
+    "sass": "^1.100.0"
+  }
+}
